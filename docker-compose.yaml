@@ -24,8 +24,8 @@ services:
       MONGO_INITDB_ROOT_USERNAME: ${DB_USER}
       MONGO_INITDB_ROOT_PASSWORD: ${DB_PASSWORD}
       MONGO_INITDB_ROOT_DATABASE: ${DB_NAME}
-    # volumes:
-    #   - database:/data/db
+    volumes:
+      - ./.database:/data/db
     ports:
       - 27017:27017
     networks:
@@ -44,9 +44,6 @@ services:
       ME_CONFIG_BASICAUTH_PASSWORD: ${DB_PASSWORD}
     networks:
       - api-network
-
-volumes:
-  database:
 
 networks:
   api-network:
