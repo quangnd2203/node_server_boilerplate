@@ -1,1 +1,1 @@
-# node_server_boilerplate
+# ERC20-tutorial
