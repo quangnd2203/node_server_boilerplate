@@ -1,5 +1,5 @@
-import { NetworkResponse, STATUS_CODE } from '../models/network_response.model';
-import SmartContractRepo from '../repositories/smart_contract.repositories';
+import { NetworkResponse, STATUS_CODE } from '../models/network_response.model.js';
+import SmartContractRepo from '../repositories/smart_contract.repositories.js';
 
 async function withdraw(request): Promise<NetworkResponse> {
     try {
@@ -7,9 +7,9 @@ async function withdraw(request): Promise<NetworkResponse> {
         if (!body.address || !body.amount) {
             throw Error('address_and_amount_is_required');
         }
-        const data = await SmartContractRepo.instance().withdraw(body.address, body.amount);
+        // const data = await SmartContractRepo.instance().withdraw(body.address, body.amount);
         return NetworkResponse.success({
-            'transaction_id': data,
+            // 'transaction_id': data,
         }, 'withdraw_success');
     } catch (e) {
         console.error(e);

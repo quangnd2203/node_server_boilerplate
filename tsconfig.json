@@ -1,23 +1,27 @@
 {
   "compilerOptions": {
+    "jsx": "react",
     "module": "nodenext",
     "moduleResolution": "nodenext",
-    "esModuleInterop": true,
-    "pretty": true,
-    "sourceMap": true,
-    "target": "esnext",
+    "target": "ES2021",
+    "declaration": false,
+    "removeComments": true,
+    "emitDecoratorMetadata": false,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "sourceMap": false,
     "outDir": "./dist",
-    "baseUrl": "./src",
+    "baseUrl": "./",
+    "incremental": true,
+    "skipLibCheck": true,
     "resolveJsonModule": true,
+    "esModuleInterop": true,
   },
-  "include": [
-    "*.ts",
-  ],
   "exclude": [
     "node_modules"
   ],
-  "ts-node": {
-    "esm": true,
-    "experimentalSpecifierResolution": "node",
-  }
+  "include": [
+    "**/src/**/*"
+  ]
 }

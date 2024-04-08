@@ -1,5 +1,5 @@
 import * as express from 'express';
-import vaultRouter from './vault.routes';
+import vaultRouter from './vault.routes.js';
 const router = express.Router();
 
 const routes = [

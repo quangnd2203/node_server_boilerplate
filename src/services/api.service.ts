@@ -1,14 +1,14 @@
-import AdminJS from 'adminjs'
-import AdminJSExpress from '@adminjs/express'
+
 import express, { Application } from "express";
 import cors from 'cors';
-import router from '../routes/routes';
-import { NetworkResponse, STATUS_CODE } from "../models/network_response.model";
+import router from '../routes/routes.js';
+import { NetworkResponse, STATUS_CODE } from '../models/network_response.model.js';
+import { admin, adminRouter } from './admin_js.service.js';
 
 const apiService: Application = express();
 
-const admin = new AdminJS({})
-const adminRouter = AdminJSExpress.buildRouter(admin)
+// const admin = new AdminJS({})
+// const adminRouter = AdminJSExpress.buildRouter(admin)
 apiService.use(admin.options.rootPath, adminRouter)
 
 apiService.use(express.json());

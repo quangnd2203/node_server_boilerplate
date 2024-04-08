@@ -1,5 +1,5 @@
 import * as express from 'express';
-import * as controller from '../controllers/vault.controller';
+import * as controller from '../controllers/vault.controller.js';
 
 const vaultRouter = express.Router();
 

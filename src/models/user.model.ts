@@ -13,4 +13,4 @@ const userModelSchema = new Schema<IUserModel>(
     { timestamps: true },
 )
 
-export default model<IUserModel>('Category', userModelSchema);
+export default model<IUserModel>('User', userModelSchema);
