@@ -1,19 +1,24 @@
 {
-    "compilerOptions": {
-        "module": "commonjs",
-        "moduleResolution": "node",
-        "esModuleInterop": true,
-        "pretty": true,
-        "sourceMap": true,
-        "target": "es6",
-        "outDir": "./dist",
-        "baseUrl": "./src",
-        "resolveJsonModule": true,
-    },
-    "include": [
-        "*.ts"
-, "src/app.ts"    ],
-    "exclude": [
-        "node_modules"
-    ]
+  "compilerOptions": {
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "esModuleInterop": true,
+    "pretty": true,
+    "sourceMap": true,
+    "target": "esnext",
+    "outDir": "./dist",
+    "baseUrl": "./src",
+    "resolveJsonModule": true,
+  },
+  "include": [
+    "*.ts",
+    "src/app.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node",
+  },
 }

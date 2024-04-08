@@ -7,14 +7,13 @@ services:
       context: .
       dockerfile: ./DockerFile
     ports: 
-      - 4000:4000
       - 3000:3000
     volumes:
       - .:/app
     depends_on:
       - mongo-express
     command: > 
-      bash -c "npm install && npm start"
+      bash -c "npm run start"
     
   boilerplate-mongo:
     container_name: boilerplate-mongo
@@ -44,6 +43,8 @@ services:
       ME_CONFIG_BASICAUTH_PASSWORD: ${DB_PASSWORD}
     networks:
       - api-network
+    links:
+      - boilerplate-mongo
 
 networks:
   api-network:

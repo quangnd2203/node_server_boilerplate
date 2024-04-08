@@ -2,10 +2,12 @@ FROM node:slim
 
 WORKDIR /app
 
-COPY . .
+COPY package.json .
 
-EXPOSE 4000
+RUN npm install
+
+FROM node:slim
+
+WORKDIR /app
 
 EXPOSE 3000
-
-CMD ["npm", "run", "start"]

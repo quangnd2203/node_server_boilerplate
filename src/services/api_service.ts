@@ -1,9 +1,15 @@
+import AdminJS from 'adminjs'
+import AdminJSExpress from '@adminjs/express'
 import express, { Application } from "express";
 import cors from 'cors';
 import router from '../routes/routes';
 import { NetworkResponse, STATUS_CODE } from "../models/network_response";
 
 const apiService: Application = express();
+
+const admin = new AdminJS({})
+const adminRouter = AdminJSExpress.buildRouter(admin)
+apiService.use(admin.options.rootPath, adminRouter)
 
 apiService.use(express.json());
 apiService.use(express.urlencoded({ extended: true }));
