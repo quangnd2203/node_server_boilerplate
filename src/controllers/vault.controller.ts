@@ -1,5 +1,5 @@
-import { NetworkResponse, STATUS_CODE } from '../models/network_response';
-import SmartContractRepo from '../repositories/smart_contract';
+import { NetworkResponse, STATUS_CODE } from '../models/network_response.model';
+import SmartContractRepo from '../repositories/smart_contract.repositories';
 
 async function withdraw(request): Promise<NetworkResponse> {
     try {

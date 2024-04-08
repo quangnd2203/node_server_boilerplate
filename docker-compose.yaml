@@ -14,6 +14,8 @@ services:
       - mongo-express
     command: > 
       bash -c "npm run start"
+    networks:
+      - api-network
     
   boilerplate-mongo:
     container_name: boilerplate-mongo

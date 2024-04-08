@@ -1,5 +1,5 @@
 import * as dotenv from 'dotenv';
-import apiService from './services/api_service.js';
+import apiService from './services/api.service';
 
 dotenv.config();
 

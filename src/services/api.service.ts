@@ -3,7 +3,7 @@ import AdminJSExpress from '@adminjs/express'
 import express, { Application } from "express";
 import cors from 'cors';
 import router from '../routes/routes';
-import { NetworkResponse, STATUS_CODE } from "../models/network_response";
+import { NetworkResponse, STATUS_CODE } from "../models/network_response.model";
 
 const apiService: Application = express();
 
