@@ -9,7 +9,14 @@ AdminJS.registerAdapter({
 })
 
 const adminOptions = {
-    resources: [UserModel],
+    resources: [{
+        resource: UserModel,
+        options: {
+            properties: {
+                password: { type: 'password', isVisible: false },
+            },
+        },
+    }],
 }
 const admin = new AdminJS(adminOptions)
 

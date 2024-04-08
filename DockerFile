@@ -2,11 +2,7 @@ FROM node:slim
 
 WORKDIR /app
 
-COPY package.json .
-
-RUN npm install
-
-FROM node:slim
+COPY package*.json ./
 
 WORKDIR /app
 
