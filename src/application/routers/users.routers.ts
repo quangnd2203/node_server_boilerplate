@@ -4,7 +4,6 @@ import TYPES from '../config/types.js';
 import { container } from '../config/dependencies.config.js';
 
 export default class UsersRouters {
-    // RUN not OK
     private controller: IUsersController = container.get<IUsersController>(TYPES.controller.IUsersController);
 
     public router = express.Router();
@@ -14,9 +13,11 @@ export default class UsersRouters {
         return this.router;
     }
 
-    private createRoutes(){
+    private createRoutes() {
         this.router.post('/', async (req, res) => {
-            this.controller.create(req.body).then((value) => res.status(value.code).send(value));
+            this.controller.create(req.body).then((value) => {
+                res.status(value.code).send(value);
+            });
         });
     }
 }
